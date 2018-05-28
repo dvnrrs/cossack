@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cossack.Core", "Cossack.Core\Cossack.Core.csproj", "{6DFCB841-D809-4011-ACC6-18C4CB847A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cossack.Wpf", "Cossack.Wpf\Cossack.Wpf.csproj", "{367ABE04-5975-4353-8BD7-692E13502C11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DFCB841-D809-4011-ACC6-18C4CB847A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFCB841-D809-4011-ACC6-18C4CB847A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFCB841-D809-4011-ACC6-18C4CB847A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFCB841-D809-4011-ACC6-18C4CB847A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367ABE04-5975-4353-8BD7-692E13502C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367ABE04-5975-4353-8BD7-692E13502C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367ABE04-5975-4353-8BD7-692E13502C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367ABE04-5975-4353-8BD7-692E13502C11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1842030-83C5-46D1-89EA-50FD73915C76}
+	EndGlobalSection
+EndGlobal
