@@ -1,0 +1,85 @@
+<!-- Copyright (C) 2018 David A. Norris <danorris@gmail.com>. All rights reserved. -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+    A ToggleButton style that presents the button content on a flat colored background rectangle.
+    The background color changes on press, mouseover, when checked, or if the button is disabled.
+    The control's cursor is Hand.
+    -->
+
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.CheckedBackground" Color="#15539d"/>
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.CheckedForeground" Color="#ffffff"/>
+
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.UncheckedBackground" Color="#d0d0d0"/>
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.UncheckedForeground" Color="#000000"/>
+
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.MouseoverBackground" Color="#356fb4"/>
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.MouseoverForeground" Color="#ffffff"/>
+
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.PressedBackground" Color="#0d3c74"/>
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.PressedForeground" Color="#ffffff"/>
+
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.DisabledBackground" Color="#90a0b0"/>
+    <SolidColorBrush x:Key="Cossack.ToggleButton.Flat.DisabledForeground" Color="#e0e8f0"/>
+
+    <Thickness x:Key="Cossack.ToggleButton.Flat.Padding">8pt, 3pt</Thickness>
+    
+    <Style x:Key="Cossack.ToggleButton.Flat" TargetType="{x:Type ToggleButton}">
+
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+
+        <Setter Property="Background" Value="{StaticResource Cossack.ToggleButton.Flat.CheckedBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource Cossack.ToggleButton.Flat.CheckedForeground}"/>
+
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Padding" Value="{StaticResource Cossack.ToggleButton.Flat.Padding}"/>
+        
+        <Setter Property="Template">
+
+            <Setter.Value>
+            
+                <ControlTemplate TargetType="ToggleButton">
+
+                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentControl Content="{TemplateBinding Content}"
+                                        KeyboardNavigation.IsTabStop="False"/>
+                    </Border>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Cossack.ToggleButton.Flat.MouseoverBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource Cossack.ToggleButton.Flat.MouseoverForeground}"/>
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Cossack.ToggleButton.Flat.PressedBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource Cossack.ToggleButton.Flat.PressedForeground}"/>
+            </Trigger>
+
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Background" Value="{StaticResource Cossack.ToggleButton.Flat.UncheckedBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource Cossack.ToggleButton.Flat.UncheckedForeground}"/>
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Cossack.ToggleButton.Flat.DisabledBackground}"/>
+                <Setter Property="Foreground" Value="{StaticResource Cossack.ToggleButton.Flat.DisabledForeground}"/>
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+</ResourceDictionary>

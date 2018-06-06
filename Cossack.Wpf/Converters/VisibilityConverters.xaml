@@ -1,0 +1,104 @@
+<!-- Copyright (C) 2018 David A. Norris <danorris@gmail.com>. All rights reserved. -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:conv="clr-namespace:Cossack.Wpf.Converters">
+
+    <!--
+    A series of converter resources that produce Visibility results based on null or equality
+    comparisons. The converters defined (whose names explain their function) are:
+    
+    Null comparisons:
+    Cossack.Converters.VisibleIfNullElseCollapsed
+    Cossack.Converters.VisibleIfNullElseHidden
+    Cossack.Converters.CollapsedIfNullElseVisible
+    Cossack.Converters.HiddenIfNullElseVisible
+
+    Equality comparisons:
+    Cossack.Converters.VisibleIfEqualElseCollapsed
+    Cossack.Converters.VisibleIfEqualElseHidden
+    Cossack.Converters.CollapsedIfEqualElseVisible
+    Cossack.Converters.HiddenIfEqualElseVisible
+    -->
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.VisibleIfNullElseCollapsed"
+                            TargetValue="{x:Null}">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Collapsed</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.VisibleIfNullElseHidden"
+                            TargetValue="{x:Null}">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Hidden</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.CollapsedIfNullElseVisible"
+                            TargetValue="{x:Null}">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Collapsed</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.HiddenIfNullElseVisible"
+                            TargetValue="{x:Null}">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Hidden</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.VisibleIfEqualElseCollapsed"
+                            UseConverterParameterAsTargetValue="True">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Collapsed</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.VisibleIfEqualElseHidden"
+                            UseConverterParameterAsTargetValue="True">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Hidden</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.CollapsedIfEqualElseVisible"
+                            UseConverterParameterAsTargetValue="True">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Collapsed</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+    <conv:EqualityConverter x:Key="Cossack.Converters.HiddenIfEqualElseVisible"
+                            UseConverterParameterAsTargetValue="True">
+        <conv:EqualityConverter.ValueIfEqual>
+            <Visibility>Hidden</Visibility>
+        </conv:EqualityConverter.ValueIfEqual>
+        <conv:EqualityConverter.ValueIfNotEqual>
+            <Visibility>Visible</Visibility>
+        </conv:EqualityConverter.ValueIfNotEqual>
+    </conv:EqualityConverter>
+
+</ResourceDictionary>
