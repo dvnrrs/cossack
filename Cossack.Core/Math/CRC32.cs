@@ -41,7 +41,7 @@ namespace Cossack.Core
 		/// Gets the current CRC value.
 		/// </summary>
 
-		public uint Value => _crc ^ 0xffffffff;
+		public long Value => _crc ^ 0xffffffff;
 
 		static CRC32()
 		{

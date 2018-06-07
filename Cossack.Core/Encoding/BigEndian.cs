@@ -2,6 +2,7 @@
 // Copyright (C) 2018 David A. Norris <danorris@gmail.com>. All rights reserved.
 //
 
+using System;
 using System.Diagnostics;
 
 namespace Cossack.Core
@@ -18,6 +19,7 @@ namespace Cossack.Core
 	/// within the array bounds.
 	/// </remarks>
 
+	[CLSCompliant(false)]
 	public static class BigEndian
 	{
 		/// <summary>
