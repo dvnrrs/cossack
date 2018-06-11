@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Cossack.Core
+namespace Cossack.Core.Data
 {
 	/// <summary>
 	/// Implements the 32-bit CRC-32 algorithm.

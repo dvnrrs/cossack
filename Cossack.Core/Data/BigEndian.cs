@@ -5,7 +5,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Cossack.Core
+namespace Cossack.Core.Data
 {
 	/// <summary>
 	/// Contains utility methods for encoding and decoding primitive numeric values as
