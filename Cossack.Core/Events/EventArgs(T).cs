@@ -7,10 +7,10 @@ using System;
 namespace Cossack.Core.Events
 {
 	/// <summary>
-	/// A generic event arguments class that contains a single data member of the specified type.
+	/// A generic event arguments class that contains a single data value of the specified type.
 	/// </summary>
 	///
-	/// <typeparam name="T">The type of the event argument object's data member.</typeparam>
+	/// <typeparam name="T">The type of the event argument object's data value.</typeparam>
 
 	public class EventArgs<T> : EventArgs
 	{
@@ -18,7 +18,7 @@ namespace Cossack.Core.Events
 		/// Initializes a new event arguments object.
 		/// </summary>
 		///
-		/// <param name="data">The data member.</param>
+		/// <param name="data">The data value associated with this event.</param>
 
 		public EventArgs(T data)
 		{
@@ -26,7 +26,7 @@ namespace Cossack.Core.Events
 		}
 
 		/// <summary>
-		/// Gets the data member.
+		/// Gets the data value associated with this event.
 		/// </summary>
 
 		public T Data { get; private set; }

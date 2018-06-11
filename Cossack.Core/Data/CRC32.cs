@@ -64,7 +64,7 @@ namespace Cossack.Core.Data
 			}
 		}
 
-		private static uint[] LOOKUP = new uint[256];
+		private static readonly uint[] LOOKUP = new uint[256];
 
 		private uint _crc = 0xffffffff;
 	}

@@ -25,9 +25,14 @@ namespace Cossack.Core.Errors
 		///
 		/// <returns>The result of <paramref name="func"/>, or <paramref name="defaultValue"/> if
 		///     <paramref name="func"/> throws an exception.</returns>
+		///
+		/// <exception cref="ArgumentNullException"><paramref name="func"/> is
+		///     <c>null</c>.</exception>
 
 		public static T Default<T>(Func<T> func, T defaultValue = default(T))
 		{
+			if (func == null) throw new ArgumentNullException(nameof(func));
+
 			try
 			{
 				return func();
@@ -44,9 +49,14 @@ namespace Cossack.Core.Errors
 		/// </summary>
 		///
 		/// <param name="action">The action to invoke.</param>
+		///
+		/// <exception cref="ArgumentNullException"><paramref name="action"/> is
+		///     <c>null</c>.</exception>
 
 		public static void Ignore(Action action)
 		{
+			if (action == null) throw new ArgumentNullException(nameof(action));
+
 			try
 			{
 				action();

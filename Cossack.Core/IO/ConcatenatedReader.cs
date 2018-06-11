@@ -22,10 +22,14 @@ namespace Cossack.Core.IO
 		/// </summary>
 		///
 		/// <param name="sources">The source readers.</param>
+		///
+		/// <exception cref="ArgumentNullException"><paramref name="sources"/> is
+		///     <c>null</c>.</exception>
 
 		public ConcatenatedReader(IEnumerable<TextReader> sources)
 		{
-			_sources = new Queue<TextReader>(sources ?? Enumerable.Empty<TextReader>());
+			if (sources == null) throw new ArgumentNullException(nameof(sources));
+			_sources = new Queue<TextReader>(sources);
 		}
 
 		/// <summary>

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics;
 
 namespace Cossack.Core.Data
 {
@@ -49,7 +50,8 @@ namespace Cossack.Core.Data
 		}
 
 		/// <summary>
-		/// Calls the base class's <see cref="ObservableCollection{T}.OnCollectionChanged(NotifyCollectionChangedEventArgs)"/>
+		/// Calls the base class's
+		/// <see cref="ObservableCollection{T}.OnCollectionChanged(NotifyCollectionChangedEventArgs)"/>
 		/// method unless events have been suppressed.
 		/// </summary>
 		///
@@ -57,6 +59,8 @@ namespace Cossack.Core.Data
 
 		protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
 		{
+			Debug.Assert(e != null);
+
 			if (!_suppressCollectionChangedEvents)
 				base.OnCollectionChanged(e);
 		}

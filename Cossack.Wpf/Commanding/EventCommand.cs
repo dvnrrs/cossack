@@ -2,6 +2,7 @@
 // Copyright (C) 2018 David A. Norris <danorris@gmail.com>. All rights reserved.
 //
 
+using Cossack.Core.Events;
 using System;
 using System.Windows.Input;
 
@@ -23,7 +24,7 @@ namespace Cossack.Wpf.Commanding
 		/// Raised when the command is executed. The event handler receives the command parameter.
 		/// </summary>
 
-		public event EventHandler<object> Executed;
+		public event EventHandler<EventArgs<object>> Executed;
 
 		/// <summary>
 		/// Initializes a new command.
@@ -56,7 +57,7 @@ namespace Cossack.Wpf.Commanding
 
 		public void Execute(object parameter)
 		{
-			Executed?.Invoke(this, parameter);
+			Executed?.Invoke(this, new EventArgs<object>(parameter));
 		}
 	}
 }

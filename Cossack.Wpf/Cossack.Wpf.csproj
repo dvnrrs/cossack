@@ -80,5 +80,11 @@
   <ItemGroup>
     <Content Include="Styles\FlatToggleButtonStyle.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cossack.Core\Cossack.Core.csproj">
+      <Project>{9ae51d6c-c094-4309-94f6-bfd7c8c197a0}</Project>
+      <Name>Cossack.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
