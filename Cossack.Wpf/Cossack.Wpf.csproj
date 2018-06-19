@@ -35,6 +35,7 @@
     <Compile Include="Commanding\EventCommand.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\EqualityConverter.cs" />
+    <Compile Include="Converters\LookupConverter.cs" />
     <Compile Include="Sorting\ListViewSortManager.cs" />
     <Compile Include="Sorting\SortAdorner.cs" />
     <Compile Include="Converters\DirectoryOnlyConverter.cs" />
