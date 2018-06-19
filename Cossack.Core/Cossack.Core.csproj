@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.2</TargetFramework>
     <RootNamespace>Cossack.Core</RootNamespace>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Authors>David Norris</Authors>
+    <Company />
+    <Product>Cossack</Product>
+    <Description>C# Swiss Army Knife</Description>
+    <Copyright>Copyright (C) 2018 David A. Norris. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/dvnrrs/Cossack</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

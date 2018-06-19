@@ -79,6 +79,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Cossack.Wpf.nuspec" />
     <Content Include="Styles\FlatToggleButtonStyle.xml" />
   </ItemGroup>
   <ItemGroup>
