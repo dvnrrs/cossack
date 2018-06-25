@@ -49,4 +49,11 @@
         </conv:EqualityConverter.ValueIfNotEqual>
     </conv:EqualityConverter>
 
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.And" Mode="And"/>
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.Or" Mode="Or"/>
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.Nand" Mode="Nand"/>
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.Nor" Mode="Nor"/>
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.Xor" Mode="Xor"/>
+    <conv:BooleanLogicConverter x:Key="Cossack.Converters.Xnor" Mode="Xnor"/>
+
 </ResourceDictionary>

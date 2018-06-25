@@ -33,6 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commanding\EventCommand.cs" />
+    <Compile Include="Converters\BooleanLogicConverter.cs" />
+    <Compile Include="Converters\BooleanLogicConverterMode.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\EqualityConverter.cs" />
     <Compile Include="Converters\LookupConverter.cs" />
