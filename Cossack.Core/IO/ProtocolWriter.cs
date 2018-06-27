@@ -600,7 +600,7 @@ namespace Cossack.Core.IO
 				return;
 
 			do { capacity *= 2; }
-			while (_bytesInBuffer + requiredBytes <= capacity);
+			while (_bytesInBuffer + requiredBytes > capacity);
 
 			byte[] newBuffer = new byte[capacity];
 			Array.Copy(_buffer, 0, newBuffer, 0, _bytesInBuffer);
