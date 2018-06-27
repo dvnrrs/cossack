@@ -4,13 +4,17 @@
     <TargetFramework>netstandard1.2</TargetFramework>
     <RootNamespace>Cossack.Core</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>David Norris</Authors>
     <Company />
-    <Product>Cossack</Product>
-    <Description>C# Swiss Army Knife</Description>
-    <Copyright>Copyright (C) 2018 David A. Norris. All rights reserved.</Copyright>
+    <Product>Cossack.Core</Product>
+    <Description>C# Swiss Army Knife - Core Library for .NET Standard 1.2</Description>
+    <Copyright>Copyright (C) 2018 David A. Norris &lt;danorris@gmail.com&gt;</Copyright>
     <RepositoryUrl>https://github.com/dvnrrs/Cossack</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dvnrrs/Cossack</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/dvnrrs/cossack/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -20,5 +24,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard1.2\Cossack.Core.xml</DocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
