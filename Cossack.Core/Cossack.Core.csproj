@@ -4,7 +4,7 @@
     <TargetFramework>netstandard1.2</TargetFramework>
     <RootNamespace>Cossack.Core</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>David Norris</Authors>
     <Company />
     <Product>Cossack.Core</Product>
@@ -13,8 +13,8 @@
     <RepositoryUrl>https://github.com/dvnrrs/Cossack</RepositoryUrl>
     <PackageProjectUrl>https://github.com/dvnrrs/Cossack</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/dvnrrs/cossack/blob/master/LICENSE.txt</PackageLicenseUrl>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
