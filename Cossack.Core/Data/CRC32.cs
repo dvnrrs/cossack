@@ -2,6 +2,7 @@
 // Copyright (C) 2018 David A. Norris <danorris@gmail.com>
 //
 
+using Cossack.Core.Miscellaneous;
 using System;
 
 namespace Cossack.Core.Data
@@ -28,10 +29,8 @@ namespace Cossack.Core.Data
 
 		public void Update(byte[] buffer, int offset, int count)
 		{
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (offset < 0) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > buffer.Length)
-				throw new ArgumentOutOfRangeException(nameof(count));
+			ValidationUtilities.ValidateArraySlice(buffer, offset, count,
+				nameof(buffer), nameof(offset), nameof(count));
 
 			for (int i = 0; i < count; ++i)
 				_crc = LOOKUP[(_crc ^ buffer[offset + i]) & 0xFF] ^ (_crc >> 8);

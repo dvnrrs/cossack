@@ -3,6 +3,7 @@
 //
 
 using Cossack.Core.Errors;
+using Cossack.Core.Miscellaneous;
 using System;
 using System.IO;
 using System.Threading;
@@ -108,11 +109,14 @@ namespace Cossack.Core.IO
 
 		public SubsetStream(Stream stream, long offset, long length, bool leaveOpen, object locker)
 		{
-			if (stream == null) throw new ArgumentNullException(nameof(stream));
-			if (!stream.CanRead || !stream.CanSeek) throw new ArgumentException(
-				"Underlying stream of a SubsetStream must be readable and seekable");
-			if (offset < 0 || offset > stream.Length) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (length < 0 || offset + length > stream.Length) throw new ArgumentOutOfRangeException(nameof(length));
+			if (stream == null)
+				throw new ArgumentNullException(nameof(stream));
+			if (!stream.CanRead || !stream.CanSeek)
+				throw new ArgumentException("Underlying stream of a SubsetStream must be readable and seekable");
+			if (offset < 0 || offset > stream.Length)
+				throw new ArgumentOutOfRangeException(nameof(offset));
+			if (length < 0 || offset + length > stream.Length)
+				throw new ArgumentOutOfRangeException(nameof(length));
 
 			_stream = stream;
 			_offset = offset;
@@ -156,9 +160,9 @@ namespace Cossack.Core.IO
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (offset < 0 || offset > buffer.Length) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > buffer.Length) throw new ArgumentOutOfRangeException(nameof(count));
+			ValidationUtilities.ValidateArraySlice(buffer, offset, count,
+				nameof(buffer), nameof(offset), nameof(count));
+
 			ThrowIfDisposed();
 
 			if (_locker != null) Monitor.Enter(_locker);
@@ -200,7 +204,7 @@ namespace Cossack.Core.IO
 		/// <exception cref="ArgumentNullException"><paramref name="buffer"/> is
 		///     <c>null</c>.</exception>
 		/// <exception cref="ArgumentOutOfRangeException"><paramref name="offset"/> or
-		///     <paramref name="count"/> are outside the bounds of
+		///     <paramref name="count"/> exceed the bounds of
 		///     <paramref name="buffer"/>.</exception>
 		/// <exception cref="IOException">An I/O error occurred.</exception>
 		/// <exception cref="ObjectDisposedException">This object or the underlying stream have
@@ -208,9 +212,9 @@ namespace Cossack.Core.IO
 
 		public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
 		{
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (offset < 0 || offset > buffer.Length) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > buffer.Length) throw new ArgumentOutOfRangeException(nameof(count));
+			ValidationUtilities.ValidateArraySlice(buffer, offset, count,
+				nameof(buffer), nameof(offset), nameof(count));
+
 			ThrowIfDisposed();
 
 			if (_locker != null) Monitor.Enter(_locker);

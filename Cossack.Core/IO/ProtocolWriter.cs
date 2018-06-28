@@ -3,6 +3,7 @@
 //
 
 using Cossack.Core.Data;
+using Cossack.Core.Miscellaneous;
 using System;
 
 namespace Cossack.Core.IO
@@ -564,9 +565,7 @@ namespace Cossack.Core.IO
 
 		public byte[] ToArray()
 		{
-			byte[] data = new byte[_bytesInBuffer];
-			Array.Copy(_buffer, 0, data, 0, _bytesInBuffer);
-			return data;
+			return _buffer.Slice(0, _bytesInBuffer);
 		}
 
 		/// <summary>

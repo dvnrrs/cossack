@@ -2,10 +2,10 @@
 // Copyright (C) 2018 David A. Norris <danorris@gmail.com>
 //
 
+using Cossack.Core.Miscellaneous;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cossack.Core.IO
@@ -55,11 +55,11 @@ namespace Cossack.Core.IO
 
 		public override int Read(char[] buffer, int index, int count)
 		{
-			if (_sources == null) throw new ObjectDisposedException(GetType().Name);
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (index < 0 || count < 0 || index + count > buffer.Length)
-				throw new ArgumentOutOfRangeException(
-					"Specified index and count are outside the array bounds");
+			if (_sources == null)
+				throw new ObjectDisposedException(GetType().Name);
+
+			ValidationUtilities.ValidateArraySlice(buffer, index, count,
+				nameof(buffer), nameof(index), nameof(count));
 
 			int total = 0;
 
@@ -99,11 +99,11 @@ namespace Cossack.Core.IO
 
 		public override async Task<int> ReadAsync(char[] buffer, int index, int count)
 		{
-			if (_sources == null) throw new ObjectDisposedException(GetType().Name);
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (index < 0 || count < 0 || index + count > buffer.Length)
-				throw new ArgumentOutOfRangeException(
-					"Specified index and count are outside the array bounds");
+			if (_sources == null)
+				throw new ObjectDisposedException(GetType().Name);
+
+			ValidationUtilities.ValidateArraySlice(buffer, index, count,
+				nameof(buffer), nameof(index), nameof(count));
 
 			int total = 0;
 

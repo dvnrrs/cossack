@@ -3,6 +3,7 @@
 //
 
 using Cossack.Core.Data;
+using Cossack.Core.Miscellaneous;
 using System;
 
 namespace Cossack.Core.IO
@@ -56,11 +57,8 @@ namespace Cossack.Core.IO
 
 		public ProtocolReader(byte[] data, int offset, int count)
 		{
-			_buffer = data ?? throw new ArgumentNullException(nameof(data));
-			if (offset < 0 || offset > data.Length)
-				throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > data.Length)
-				throw new ArgumentOutOfRangeException(nameof(count));
+			ValidationUtilities.ValidateArraySlice(data, offset, count,
+				nameof(data), nameof(offset), nameof(count));
 
 			_buffer = data;
 			_position = _originalPosition = offset;
@@ -391,8 +389,7 @@ namespace Cossack.Core.IO
 		public byte[] Read(int bytes)
 		{
 			ThrowIfNotAvailable(bytes);
-			byte[] data = new byte[bytes];
-			Array.Copy(_buffer, _position, data, 0, bytes);
+			byte[] data = _buffer.Slice(_position, bytes);
 			_position += bytes;
 			return data;
 		}

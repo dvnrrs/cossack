@@ -1,6 +1,7 @@
 ﻿//
 // Copyright (C) 2018 David A. Norris <danorris@gmail.com>
 //
+using Cossack.Core.Miscellaneous;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -133,10 +134,11 @@ namespace Cossack.Core.IO
 
 		public static bool ReadExactly(this Stream stream, byte[] buffer, int offset, int count, bool throwIfNoData)
 		{
-			if (stream == null) throw new ArgumentNullException(nameof(stream));
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (offset < 0 || offset > buffer.Length) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > buffer.Length) throw new ArgumentOutOfRangeException(nameof(count));
+			if (stream == null)
+				throw new ArgumentNullException(nameof(stream));
+
+			ValidationUtilities.ValidateArraySlice(buffer, offset, count,
+				nameof(buffer), nameof(offset), nameof(count));
 
 			int totalBytesRead = 0;
 
@@ -411,11 +413,13 @@ namespace Cossack.Core.IO
 			byte[] buffer, int offset, int count, bool throwIfNoData,
 			CancellationToken cancellationToken)
 		{
-			if (stream == null) throw new ArgumentNullException(nameof(stream));
-			if (buffer == null) throw new ArgumentNullException(nameof(buffer));
-			if (cancellationToken == null) throw new ArgumentNullException(nameof(cancellationToken));
-			if (offset < 0 || offset > buffer.Length) throw new ArgumentOutOfRangeException(nameof(offset));
-			if (count < 0 || offset + count > buffer.Length) throw new ArgumentOutOfRangeException(nameof(count));
+			if (stream == null)
+				throw new ArgumentNullException(nameof(stream));
+			if (cancellationToken == null)
+				throw new ArgumentNullException(nameof(cancellationToken));
+
+			ValidationUtilities.ValidateArraySlice(buffer, offset, count,
+				nameof(buffer), nameof(offset), nameof(count));
 
 			int totalBytesRead = 0;
 
