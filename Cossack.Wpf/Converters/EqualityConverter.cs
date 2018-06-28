@@ -86,15 +86,13 @@ namespace Cossack.Wpf.Converters
 		public bool UseConverterParameterAsTargetValue { get; set; } = false;
 
 		/// <summary>
-		/// Gets or sets the <see cref="Visibility"/> value to select if the input value is equal
-		/// to the target value.
+		/// Gets or sets the value to select if the input value is equal to the target value.
 		/// </summary>
 
 		public object ValueIfEqual { get; set; } = true;
 
 		/// <summary>
-		/// Gets or sets the <see cref="Visibility"/> value to select if the input value is not
-		/// equal to the target value.
+		/// Gets or sets the value to select if the input value is not equal to the target value.
 		/// </summary>
 
 		public object ValueIfNotEqual { get; set; } = false;

@@ -37,7 +37,9 @@
     <Compile Include="Converters\BooleanLogicConverterMode.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Converters\EqualityConverter.cs" />
+    <Compile Include="Converters\MultiEqualityConverter.cs" />
     <Compile Include="Converters\LookupConverter.cs" />
+    <Compile Include="Media\ImageUtilities.cs" />
     <Compile Include="Sorting\ListViewSortManager.cs" />
     <Compile Include="Sorting\SortAdorner.cs" />
     <Compile Include="Converters\DirectoryOnlyConverter.cs" />
@@ -86,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cossack.Core\Cossack.Core.csproj">
-      <Project>{9ae51d6c-c094-4309-94f6-bfd7c8c197a0}</Project>
+      <Project>{7bd5837c-b175-4e46-ac9f-dc385379cac5}</Project>
       <Name>Cossack.Core</Name>
     </ProjectReference>
   </ItemGroup>

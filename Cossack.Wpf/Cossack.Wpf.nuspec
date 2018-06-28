@@ -5,7 +5,7 @@
     <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 
         <id>Cossack.Wpf</id>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
 
         <description>C# Swiss Army Knife - WPF Library</description>
         <copyright>Copyright (C) 2018 David A. Norris</copyright>
@@ -20,7 +20,7 @@
         <licenseUrl>https://github.com/dvnrrs/cossack/blob/master/LICENSE.txt</licenseUrl>
 
         <dependencies>
-            <dependency id="Cossack.Core" version="1.0.4"/>
+            <dependency id="Cossack.Core" version="1.0.5"/>
         </dependencies>
 
     </metadata>

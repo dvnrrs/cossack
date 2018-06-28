@@ -27,29 +27,39 @@ namespace Cossack.Wpf.Converters
 
 		public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 		{
+			bool result;
+
 			switch (Mode)
 			{
 				case BooleanLogicConverterMode.And:
-					return values.All(v => true.Equals(v));
+					result = values.All(v => true.Equals(v));
+					break;
 
 				case BooleanLogicConverterMode.Or:
-					return values.Any(v => true.Equals(v));
+					result = values.Any(v => true.Equals(v));
+					break;
 
 				case BooleanLogicConverterMode.Nand:
-					return !values.All(v => true.Equals(v));
+					result = !values.All(v => true.Equals(v));
+					break;
 
 				case BooleanLogicConverterMode.Nor:
-					return !values.Any(v => true.Equals(v));
+					result = !values.Any(v => true.Equals(v));
+					break;
 
 				case BooleanLogicConverterMode.Xor:
-					return values.Count(v => true.Equals(v)) % 2 == 1;
+					result = values.Count(v => true.Equals(v)) % 2 == 1;
+					break;
 
 				case BooleanLogicConverterMode.Xnor:
-					return values.Count(v => true.Equals(v)) % 2 == 0;
+					result = values.Count(v => true.Equals(v)) % 2 == 0;
+					break;
 
 				default:
 					throw new NotSupportedException();
 			}
+
+			return result ? ValueIfTrue : ValueIfFalse;
 		}
 
 		/// <summary>
@@ -77,5 +87,17 @@ namespace Cossack.Wpf.Converters
 		/// </summary>
 
 		public BooleanLogicConverterMode Mode { get; set; } = BooleanLogicConverterMode.And;
+
+		/// <summary>
+		/// Gets or sets the value to return if the result of the boolean logic is <c>true</c>.
+		/// </summary>
+
+		public object ValueIfTrue { get; set; } = true;
+
+		/// <summary>
+		/// Gets or sets the value to return if the result of the boolean logic is <c>false</c>.
+		/// </summary>
+
+		public object ValueIfFalse { get; set; } = false;
 	}
 }
